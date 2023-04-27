@@ -1,10 +1,10 @@
 import {useEffect, useState} from 'react'
-import axios from '../../../lib/axios';
+import axios from '../../../../lib/axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuilding, faArrowUpRightFromSquare, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import {  faGithub } from '@fortawesome/free-brands-svg-icons'
 import { ProfileContainer, ProfileDetails, ProfileImageAvatar, ProfileInfo } from "./styles";
-import { Routes } from '../../../utils/routes.enum';
+import { Routes } from '../../../../utils/routes.enum';
 
 interface Profile {
     image: string,

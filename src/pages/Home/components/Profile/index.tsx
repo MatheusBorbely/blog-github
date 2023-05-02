@@ -5,6 +5,7 @@ import { faBuilding, faArrowUpRightFromSquare, faUserGroup } from '@fortawesome/
 import {  faGithub } from '@fortawesome/free-brands-svg-icons'
 import { ProfileContainer, ProfileDetails, ProfileImageAvatar, ProfileInfo } from "./styles";
 import { Routes } from '../../../../utils/routes.enum';
+import { Link } from 'react-router-dom';
 
 interface Profile {
     image: string,
@@ -31,7 +32,6 @@ export function Profile() {
         try {
 
             const response = await axios.get(`${Routes.USER}/MatheusBorbely`);
-            console.log(response)
             const {avatar_url, login, html_url, name, bio, company, followers} = response.data;
 
             setProfile( {
@@ -63,10 +63,10 @@ export function Profile() {
                     <h1>
                         {profile.name}
                     </h1>
-                    <a href={profile.url} target="_blank" rel="noopener noreferrer">
+                    <Link to={profile.url} target="_blank" rel="noopener noreferrer">
                         github
                         <FontAwesomeIcon icon={faArrowUpRightFromSquare} color='#3294F8' size='xs'/>
-                    </a>
+                    </Link>
                 </header>
                 <article>
                     <p>

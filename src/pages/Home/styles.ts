@@ -15,5 +15,6 @@ export const HomeContainer = styled.main`
         margin-top: 3rem;
         justify-content: space-between;
         gap: 2rem;
+        flex-wrap: wrap;
     }
 `

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../../utils/device';
 
 export const ProfileContainer = styled.section`
     display: flex;
@@ -9,6 +10,11 @@ export const ProfileContainer = styled.section`
     position: relative;
     transform: translateY(-43%);
     background-color: ${(props) => props.theme['base-profile']};
+
+    ${device.mobileL}{
+        flex-direction: column;
+        transform: translateY(-16%);    
+    }
 `
 export const ProfileImageAvatar= styled.div`
     position: relative;
@@ -16,6 +22,13 @@ export const ProfileImageAvatar= styled.div`
     padding-top: 19.25%;
     max-width: 148px;
     max-height: 148px;
+
+    ${device.mobileL}{
+        padding-top: 74.25%;
+        max-width: 100%;
+        max-height: 170px;   
+    }
+    
 
     img{
         position: absolute;
@@ -63,6 +76,11 @@ export const ProfileInfo = styled.section`
         display: flex;
         gap: 2rem;
         padding-top: 1rem;
+        flex-wrap: wrap;
+
+        ${device.mobileL}{
+            justify-content: center;  
+        }
     }
 
 `

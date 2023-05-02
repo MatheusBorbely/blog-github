@@ -19,9 +19,10 @@ export function Home() {
   
   async function searchIssues(query?: string) {
       try {
+        const param = query ? query : '';
         const response = await axios.get(`/search/issues?q=user:MatheusBorbely%20repo:github-blog`,{
           params: {
-            q: `user:MatheusBorbely repo:github-blog ${query}`,
+            q: `user:MatheusBorbely repo:github-blog ${param}`,
           }
         });
         const newIssues: Issues[] = [];
@@ -48,7 +49,7 @@ export function Home() {
   useEffect(() => {
     searchIssues();
   }, []);
-  const cards = issues.map((issue) => (<Card {...issue} />))
+  const cards = issues.map((issue) => (<Card key={issue.id} {...issue} />))
   
   return (
     <HomeContainer>
